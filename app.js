@@ -19,12 +19,12 @@ webpush.setVapidDetails(
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("Hello world");
-})
 
 const subDatabse = [];
 
+app.get("/", (req, res) => {
+    res.json({ status: "Success", data: subDatabse });
+})
 
 app.post("/save-subscription", (req, res) => {
     subDatabse.push(req.body);
